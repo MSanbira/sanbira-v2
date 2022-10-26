@@ -1,0 +1,16 @@
+@layer defaults {
+
+    :root {
+        --bg-color: #222;
+        --t-color: #fff;
+    }
+
+    .app {
+        width: 100%;
+        height: 100vh;
+        overflow: auto;
+        background: var(--bg-color);
+        color: var(--t-color);
+    }
+
+}
