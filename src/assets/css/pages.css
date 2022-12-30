@@ -1,0 +1,20 @@
+@layer pages {
+
+    .main-page-wrapper {
+        --btn-num: 6;
+
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: repeat(var(--btn-num), 1fr);
+        height: var(--m-height);
+        overflow: hidden;
+    }
+
+    @media (max-width: 650px) {
+        .main-page-wrapper {
+            height: 100%;
+            overflow: auto;
+        }
+    }
+
+}

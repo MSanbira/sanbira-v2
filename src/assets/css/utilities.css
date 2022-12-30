@@ -1,0 +1,15 @@
+@layer utilities {
+    .show-on-mobile-flex {
+        display: none;
+    }
+
+    @media (max-width: 650px) {
+        .hide-on-mobile {
+            display: none;
+        }
+
+        .show-on-mobile-flex {
+            display: flex;
+        }
+    }
+}

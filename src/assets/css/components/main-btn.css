@@ -1,0 +1,86 @@
+@layer components {
+
+    @property --g-color-1 {
+        syntax: "<color>";
+        inherits: false;
+        initial-value: #02143F;
+    }
+
+    @property --g-color-2 {
+        syntax: "<color>";
+        inherits: false;
+        initial-value: #02143F;
+    }
+
+    .project-main-btn {
+        --padding: 2rem;
+        display: block;
+        font-size: calc(var(--m-height) / var(--btn-num) - var(--padding));
+        font-weight: var(--b-weight);
+        line-height: 1;
+        margin-left: var(--rand-place, 0);
+        white-space: nowrap;
+        animation: move infinite linear calc(var(--e-width) / 30 * 1s);
+        animation-play-state: paused;
+    }
+
+    .project-main-btn:hover {
+        animation-play-state: running;
+    }
+
+    .project-main-btn span {
+        --color-delay: .5s;
+        background: linear-gradient(90deg, var(--g-color-1), var(--g-color-2));
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: --g-color-1 var(--color-delay), --g-color-2 var(--color-delay);
+    }
+
+    .project-main-btn span:after {
+        content: ' ∙ ';
+    }
+
+    .project-main-btn:hover span {
+        --g-color-1: var(--p-color);
+        --g-color-2: var(--s-color);
+    }
+
+    @media (max-width: 650px) {
+        .project-main-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: unset;
+            padding: 32px;
+            font-size: 28px;
+            color: var(--t-color);
+            border-top: solid 2px var(--nav-bg);
+            text-align: center;
+            margin: 0;
+        }
+
+        .project-main-btn span:not(:first-child) {
+            display: none;
+        }
+
+        .project-main-btn span {
+            background: unset;
+            background-clip: unset;
+            -webkit-text-fill-color: unset;
+        }
+
+        .project-main-btn span:after {
+            content: unset;
+        }
+    }
+
+    @keyframes move {
+        0% {
+            transform: translateX(0)
+        }
+
+        100% {
+            transform: translateX(calc(var(--e-width, 200px) * -1px))
+        }
+    }
+}

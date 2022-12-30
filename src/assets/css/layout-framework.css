@@ -1,0 +1,105 @@
+@layer framework {
+
+  [class*="d-flex"] {
+    display: flex;
+    gap: 0;
+  }
+  [class*="d-flex"][class*="dir-col"] {
+    flex-direction: column;
+  }
+  [class*="d-flex"][class*="f-wrap"] {
+    flex-wrap: wrap;
+  }
+  [class*="d-flex"][class*="min-0"] {
+    min-width: 0;
+  }
+
+  [class*="d-grid"],
+  [class*="col-container"] {
+    display: grid;
+    gap: 16px;
+    --layout-gap: 16px;
+  }
+  [class*="d-grid"] > * {
+    min-width: 0;
+  }
+
+  [class*="col-container"] {
+    grid-template-columns: var(--col-template, minmax(0, 1fr));
+  }
+  [class*="col-container:2"] {
+    --col-template: minmax(0, 1fr) minmax(0, 1fr);
+  }
+  [class*="col-container:3"] {
+    --col-template: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  }
+  [class*="col-container:4"] {
+    --col-template: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  }
+  [class*="col-container"][class*="with-divider"] > *:not(:last-child) {
+    position: relative;
+  }
+  [class*="col-container"][class*="with-divider"] > *:not(:last-child)::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: calc(var(--layout-gap) / 2 * -1 - 1px);
+    width: 1px;
+    height: 100%;
+    background: var(--grey-300);
+  }
+
+  [class*="ali-start"]:is([class*="d-flex"], [class*="d-grid"], [class*="col-container"]) {
+    align-items: flex-start;
+  }
+  [class*="ali-center"]:is([class*="d-flex"], [class*="d-grid"], [class*="col-container"]) {
+    align-items: center;
+  }
+  [class*="ali-end"]:is([class*="d-flex"], [class*="d-grid"], [class*="col-container"]) {
+    align-items: flex-end;
+  }
+  [class*="ali-baseline"]:is([class*="d-flex"], [class*="d-grid"], [class*="col-container"]) {
+    align-items: baseline;
+  }
+  [class*="ali-stretch"]:is([class*="d-flex"], [class*="d-grid"], [class*="col-container"]) {
+    align-items: stretch;
+  }
+  [class*="jc-start"]:is([class*="d-flex"], [class*="d-grid"], [class*="col-container"]) {
+    justify-content: flex-start;
+  }
+  [class*="jc-center"]:is([class*="d-flex"], [class*="d-grid"], [class*="col-container"]) {
+    justify-content: center;
+  }
+  [class*="jc-end"]:is([class*="d-flex"], [class*="d-grid"], [class*="col-container"]) {
+    justify-content: flex-end;
+  }
+  [class*="jc-sb"]:is([class*="d-flex"], [class*="d-grid"], [class*="col-container"]) {
+    justify-content: space-between;
+  }
+  [class*="xs-gap"]:is([class*="d-flex"], [class*="d-grid"], [class*="col-container"]) {
+    --layout-gap: 4px;
+    gap: 4px;
+  }
+  [class*="sm-gap"]:is([class*="d-flex"], [class*="d-grid"], [class*="col-container"]) {
+    --layout-gap: 8px;
+    gap: 8px;
+  }
+  [class*="md-gap"]:is([class*="d-flex"], [class*="d-grid"], [class*="col-container"]) {
+    --layout-gap: 16px;
+    gap: 16px;
+  }
+  [class*="lg-gap"]:is([class*="d-flex"], [class*="d-grid"], [class*="col-container"]) {
+    --layout-gap: 24px;
+    gap: 24px;
+  }
+  [class*="xl-gap"]:is([class*="d-flex"], [class*="d-grid"], [class*="col-container"]) {
+    --layout-gap: 48px;
+    gap: 48px;
+  }
+  [class*="no-gap"]:is([class*="d-flex"], [class*="d-grid"], [class*="col-container"]) {
+    --layout-gap: 0;
+    gap: 0;
+  }
+  
+}
