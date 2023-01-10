@@ -10,7 +10,7 @@ export const Header = (props: {
     <header className={className({ "is-mock": !!props.isMock })}>
       <MenuIcon onClick={props.toggleMenuOpen} />
       <h1>
-        <span className="semi-bold-weight my-name">Matan Sanbira</span>{" "}
+        <a href='/' className="semi-bold-weight my-name">Matan Sanbira</a>{" "}
         <span className="hide-on-mobile"> - </span>
         {"\n"}Senior Frontend Dev
       </h1>

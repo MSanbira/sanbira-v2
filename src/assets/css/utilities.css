@@ -3,6 +3,10 @@
         display: none;
     }
 
+    .bold-weight {
+        font-weight: var(--b-weight);
+    }
+
     @media (max-width: 650px) {
         .hide-on-mobile {
             display: none;

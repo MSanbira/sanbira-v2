@@ -1,5 +1,12 @@
+import { AlonaContent } from "./pages/content/alona";
+import { CssBattleContent } from "./pages/content/cssbattle";
+import { ExtensionsContent } from "./pages/content/extensions";
+import { LoadmillContent } from "./pages/content/loadmill";
+import { MiscContent } from "./pages/content/misc";
+import { MysizeContent } from "./pages/content/mysize";
+
 export const Pages = {
-  MAIN: "main",
+  ROOT: "sanbira",
   ABOUT: "about",
   LOADMILL: "loadmill",
   MYSIZE: "mysize",
@@ -67,3 +74,25 @@ export const ExternalLinks = [
     href: 'https://matan-sanbira.medium.com'
   },
 ];
+
+export interface PageContent {
+  topSection: {
+    title: string;
+    tldr: string;
+    image: string;
+  };
+  mainSection: {
+    paragraphs: (string | JSX.Element)[];
+    images: string[];
+  };
+  demoLink?: string;
+};
+
+export const PagesContent = {
+  [Pages.LOADMILL]: LoadmillContent,
+  [Pages.MYSIZE]: MysizeContent,
+  [Pages.ALONA]: AlonaContent,
+  [Pages.CSSBATTLE]: CssBattleContent,
+  [Pages.EXTENSIONS]: ExtensionsContent,
+  [Pages.MISC]: MiscContent,
+} as {[key: string]: PageContent};

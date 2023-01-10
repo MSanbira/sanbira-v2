@@ -10,10 +10,126 @@
         overflow: hidden;
     }
 
-    @media (max-width: 650px) {
+    section {
+        display: grid;
+        grid-template-columns: 2fr 5fr;
+
+        column-gap: 15rem;
+        row-gap: 4.8rem;
+        padding: 8rem 15rem;
+    }
+
+    section h1 {
+        font-size: max(6.4rem, 28px);
+        font-weight: var(--b-weight);
+        margin-bottom: max(2.4rem, 12px);
+    }
+
+    section h2 {
+        font-size: max(2rem, 18px);
+        line-height: 1.5;
+    }
+
+    section p {
+        font-size: max(1.6rem, 14px);
+        margin-bottom: max(2.4rem, 12px);
+        line-height: 1.5;
+    }
+
+    section img {
+        box-shadow: -.8rem -.8rem 1.5rem #0005;
+    }
+
+    section:first-of-type img {
+        max-height: max(40rem, 140px);
+        justify-self: center;
+    }
+
+    section:first-of-type {
+        background: conic-gradient(from 95deg at 10% 70%,var(--nav-bg) 135deg, #0000 0);
+    }
+
+    section:last-of-type {
+        grid-template-rows: 1fr auto;
+        background: var(--nav-bg);
+    }
+
+    .demo-link {
+        background: linear-gradient(90deg, var(--p-color), var(--s-color));
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .two-imgs {
+        display: flex;
+        flex-direction: column;
+        grid-row: 1 / -1;
+        grid-column: 2 / -1;
+    }
+
+    .two-imgs img:first-child {
+        width: 40%;
+    }
+
+    .two-imgs img:last-child {
+        width: 70%;
+        align-self: end;
+        margin-top: -3rem;
+    }
+
+    .project-end-nav a:first-of-type .arrow {
+        rotate: 180deg;
+    }
+
+    @media (max-width: 1400px) {
+        section {
+            grid-template-columns: 1fr 1fr;
+            column-gap: 2.4rem;
+            padding-inline: 4rem;
+        }
+    }
+
+    @media (max-width: 900px) {
         .main-page-wrapper {
             height: 100%;
             overflow: auto;
+        }
+
+        section {
+            grid-template-columns: 1fr;
+            column-gap: unset;
+            row-gap: unset;
+            gap: 32px;
+            padding: 24px;
+        }
+
+        section h1 {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .demo-link {
+            text-align: center;
+        }
+
+        .two-imgs {
+            gap: 12px;
+            grid-row: unset;
+            grid-column: unset;
+        }
+
+        .two-imgs img:first-child {
+            width: 50%;
+        }
+
+        .two-imgs img:last-child {
+            width: 90%;
+            margin-top: 8px;
+        }
+
+        .project-end-nav {
+            justify-content: space-between;
+            gap: unset;
         }
     }
 

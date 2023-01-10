@@ -59,6 +59,10 @@
             margin: 0;
         }
 
+        .project-main-btn:first-child {
+            border-top: none;
+        }
+
         .project-main-btn span:not(:first-child) {
             display: none;
         }

@@ -20,6 +20,11 @@
         font-weight: var(--n-weight);
     }
 
+    ul {
+        list-style: unset;
+        margin-left: 1em;
+    }
+
     .semi-bold-weight {
         font-weight: var(--sb-weight);
     }
@@ -65,6 +70,7 @@
             display: block;
             padding: 32px;
             padding-top: 64px;
+            border-bottom: solid 2px var(--nav-bg);
         }
 
         header h1 {

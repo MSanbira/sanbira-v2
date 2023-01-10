@@ -1,22 +1,39 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Pages } from "../pages-data";
 import { MainPage } from "../pages/main-page";
 
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Redirect } from "react-router";
+import { getSubPath, getRootPath } from "../utils";
+import { ProjectPage } from "../pages/project-page";
+
+export const MainProjects = [
+  Pages.LOADMILL,
+  Pages.MYSIZE,
+  Pages.ALONA,
+  Pages.EXTENSIONS,
+  Pages.CSSBATTLE,
+  Pages.MISC,
+];
+
 export const MainContent = () => {
-  const [selectedPage, setSelectedPage] = useState<string>(Pages.MAIN);
 
-  useEffect(() => {
-    // change selected page
-  }, []);
+  return (
+    <div className="main-container">
+      <Router>
+        <Switch>
+          <Route path={getRootPath()} component={MainPage} exact />
+          {MainProjects.map((project) => (
+            <Route
+              path={getSubPath(project)}
+              component={() => ProjectPage({ project })}
+              exact
+            />
+          ))}
 
-  return <div className="main-container">{getSelectedPage(selectedPage)}</div>;
-};
-
-const getSelectedPage = (selectedPage: string) => {
-  switch (selectedPage) {
-    case Pages.MAIN:
-      return <MainPage />;
-    default:
-      return <h1>page not found</h1>;
-  }
+          <Redirect from="*" to={getRootPath()} />
+        </Switch>
+      </Router>
+    </div>
+  );
 };
