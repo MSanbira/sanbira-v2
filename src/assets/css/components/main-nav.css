@@ -37,7 +37,7 @@
 
     .main-nav a {
         display: block;
-        font-size: clamp(24px, 4vw, 5.5vh);
+        font-size: clamp(20px, 4vw, 5.5vh);
         margin-bottom: 2.4vh;
         font-weight: var(--b-weight);
     }
