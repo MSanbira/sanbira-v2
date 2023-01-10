@@ -10,9 +10,9 @@ export const CssBattleContent = {
   },
   mainSection: {
     paragraphs: [
-      <>
+      <p>
         Something will be here in the future I promise... 🤭
-      </>,
+      </p>,
     ],
     images: [placeholder, placeholder],
   },

@@ -28,6 +28,7 @@ export const MainContent = () => {
               path={getSubPath(project)}
               component={() => ProjectPage({ project })}
               exact
+              key={project}
             />
           ))}
 

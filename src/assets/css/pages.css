@@ -14,7 +14,7 @@
         display: grid;
         grid-template-columns: 2fr 5fr;
 
-        column-gap: 15rem;
+        column-gap: 10rem;
         row-gap: 4.8rem;
         padding: 8rem 15rem;
     }
@@ -30,7 +30,8 @@
         line-height: 1.5;
     }
 
-    section p {
+    section p,
+    section ul {
         font-size: max(1.6rem, 14px);
         margin-bottom: max(2.4rem, 12px);
         line-height: 1.5;
@@ -46,7 +47,7 @@
     }
 
     section:first-of-type {
-        background: conic-gradient(from 95deg at 10% 70%,var(--nav-bg) 135deg, #0000 0);
+        background: conic-gradient(from 95deg at 10% 60%, var(--nav-bg) 135deg, #0000 0);
     }
 
     section:last-of-type {
@@ -84,7 +85,7 @@
     @media (max-width: 1400px) {
         section {
             grid-template-columns: 1fr 1fr;
-            column-gap: 2.4rem;
+            column-gap: 4rem;
             padding-inline: 4rem;
         }
     }

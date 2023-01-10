@@ -5,7 +5,7 @@ export const ExternalLinksSection = () => {
   return (
     <div className="external-links">
       {ExternalLinks.map(({ title, href }, i) => (
-        <>
+        <React.Fragment key={i}>
           <a
             href={href}
             className="external-link"
@@ -15,7 +15,7 @@ export const ExternalLinksSection = () => {
             {title}
           </a>
           {i === 2 && <br />}
-        </>
+        </React.Fragment>
       ))}
     </div>
   );

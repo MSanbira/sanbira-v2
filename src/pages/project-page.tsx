@@ -21,7 +21,7 @@ export const ProjectPage = (props: { project: string }) => {
       <section>
         <div>
           {mainSection.paragraphs.map((p, i) => (
-            <p key={i}>{p}</p>
+            <React.Fragment key={i}>{p}</React.Fragment>
           ))}
           {demoLink && (
           <a
