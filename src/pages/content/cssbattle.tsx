@@ -11,7 +11,7 @@ export const CssBattleContent = {
   mainSection: {
     paragraphs: [
       <p>
-        Something will be here in the future I promise... 🤭
+        🚧 Coming soon 🚧
       </p>,
     ],
     images: [placeholder, placeholder],

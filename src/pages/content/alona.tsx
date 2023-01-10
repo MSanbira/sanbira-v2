@@ -22,15 +22,16 @@ export const AlonaContent = {
       <p>
         Developing a non-compromise site for a product designer meant that I
         needed to use all my CSS skills. I also decided not to use any CSS
-        framework so I can use this project as a learning experience to improve my
-        skills. I used React for routing and repeating components and Heroku for
-        hosting.
+        framework so I can use this project as a learning experience to improve
+        my skills. I used React for routing and repeating components and Heroku
+        for hosting.
       </p>,
       <p>
-        One of my challenges was developing a responsive image carousel, which I
-        used scroll snap and grid properties for. And fully custom buttons with
-        hover states and :before and :after so the markup will only need a
-        button element for it.
+        One of the challenges this project posed was a responsive image
+        carousel. The solution I landed on was using the scroll snap and grid
+        properties. I also implemented completely custom buttons with hover
+        states, and :before and :after pseudo elements, to allow the markup to
+        efficiently access this using only a {'<button>'} element.
       </p>,
     ],
     images: [alona3, alona2],
