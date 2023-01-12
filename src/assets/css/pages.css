@@ -37,6 +37,10 @@
         line-height: 1.5;
     }
 
+    section h3 {
+        margin-bottom: max(0.8rem, 4px);
+    }
+
     section img {
         box-shadow: -.8rem -.8rem 1.5rem #0005;
     }
@@ -59,6 +63,8 @@
         background: linear-gradient(90deg, var(--p-color), var(--s-color));
         background-clip: text;
         -webkit-text-fill-color: transparent;
+        display: inline-block;
+        margin-bottom: 1.5em;
     }
 
     .two-imgs {

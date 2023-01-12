@@ -1,5 +1,6 @@
 import React from "react";
 import { Arrow } from "../assets/css/components/arrow";
+import { DemoLink } from "../components/demo-link";
 import { MainProjects } from "../components/main-content";
 import { PagesContent, PagesData } from "../pages-data";
 
@@ -23,23 +24,14 @@ export const ProjectPage = (props: { project: string }) => {
           {mainSection.paragraphs.map((p, i) => (
             <React.Fragment key={i}>{p}</React.Fragment>
           ))}
-          {demoLink && (
-          <a
-            href={demoLink}
-            target="_blank"
-            rel="noreferrer"
-            className="demo-link bold-weight"
-          >
-            See Live Project
-          </a>
-        )}
+          {demoLink && <DemoLink link={demoLink} />}
         </div>
         <div className="two-imgs">
           {mainSection.images.map((src, i) => (
             <img src={src} alt={alt} key={i} />
           ))}
         </div>
-        
+
         <ProjectEndNav from={project} />
       </section>
     </div>
