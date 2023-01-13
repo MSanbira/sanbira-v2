@@ -26,9 +26,18 @@ export const ProjectPage = (props: { project: string }) => {
           ))}
           {demoLink && <DemoLink link={demoLink} />}
         </div>
-        <div className="two-imgs">
-          {mainSection.images.map((src, i) => (
-            <img src={src} alt={alt} key={i} />
+
+        {!!mainSection.images?.length && (
+          <div className="two-imgs">
+            {mainSection.images.map((src, i) => (
+              <img src={src} alt={alt} key={i} />
+            ))}
+          </div>
+        )}
+
+        <div>
+          {mainSection.moreParagraphs?.map((p, i) => (
+            <React.Fragment key={i}>{p}</React.Fragment>
           ))}
         </div>
 

@@ -17,6 +17,9 @@
         position: absolute;
         inset: 0 auto 0 0;
         z-index: 42;
+        background: var(--bg-color);
+        opacity: 0;
+        transition: opacity 0.5s;
     }
 
     .is-menu-open .main-nav {
@@ -25,6 +28,7 @@
 
     .is-menu-open .main-nav-shadow {
         right: 0;
+        opacity: 0.5;
     }
 
     .main-nav h3 {
@@ -63,19 +67,12 @@
             padding-top: 32px;
             border-top: solid 2px var(--t-color);
         }
-
-        .main-nav-shadow {
-            background: var(--bg-color);
-            opacity: 0;
-            z-index: 500;
-            transition: opacity 0.5s;
-        }
         .main-nav div:has(.menu-icon) {
             margin-bottom: 24px;
         }
 
-        .is-menu-open .main-nav-shadow {
-            opacity: 0.5;
+        .main-nav-shadow {
+            z-index: 500;
         }
 
         .is-menu-open .main-nav {

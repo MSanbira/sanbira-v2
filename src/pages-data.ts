@@ -83,7 +83,8 @@ export interface PageContent {
   };
   mainSection: {
     paragraphs: (string | JSX.Element)[];
-    images: string[];
+    moreParagraphs?: (string | JSX.Element)[];
+    images?: string[];
   };
   demoLink?: string;
 };
