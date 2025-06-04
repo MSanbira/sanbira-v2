@@ -1,8 +1,7 @@
 import React from "react";
 import { Arrow } from "../assets/css/components/arrow";
 import { DemoLink } from "../components/demo-link";
-import { MainProjects } from "../components/main-content";
-import { PagesContent, PagesData } from "../pages-data";
+import { PagesContent, PagesData, Projects } from "../pages-data";
 
 export const ProjectPage = (props: { project: string }) => {
   const { project } = props;
@@ -48,9 +47,9 @@ export const ProjectPage = (props: { project: string }) => {
 };
 
 const ProjectEndNav = ({ from }: { from: string }) => {
-  const index = MainProjects.findIndex((mp) => mp === from);
-  const next = MainProjects[index + 1] || MainProjects[0];
-  const prev = MainProjects[index - 1] || MainProjects[MainProjects.length - 1];
+  const index = Projects.findIndex((mp) => mp === from);
+  const next = Projects[index + 1] || Projects[0];
+  const prev = Projects[index - 1] || Projects[Projects.length - 1];
   return (
     <div className="project-end-nav d-flex-ali-center-xl-gap">
       <a className="d-flex-dir-col-ali-start-md-gap" href={"/" + prev}>
