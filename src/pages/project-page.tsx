@@ -16,7 +16,7 @@ export const ProjectPage = (props: { project: string }) => {
           <h2>{topSection.tldr}</h2>
         </div>
 
-        <img src={topSection.image} alt={alt} />
+        <img src={topSection.image} alt={alt} className={topSection.noShadow ? "no-shadow" : ""} />
       </section>
       <section>
         <div>

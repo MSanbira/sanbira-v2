@@ -1,15 +1,15 @@
 import { AlonaContent } from "./pages/content/alona";
 import { AtomGridTableContent } from "./pages/content/atom-grid-table";
+import { CascadeKitContent } from "./pages/content/cascadekit";
 import { CssBattleContent } from "./pages/content/cssbattle";
-import { LoadmillContent } from "./pages/content/loadmill";
 import { MiscContent } from "./pages/content/misc";
-import { MysizeContent } from "./pages/content/mysize";
+import { WorkContent } from "./pages/content/work";
 
 export const Pages = {
   ROOT: "sanbira",
   ABOUT: "about",
-  LOADMILL: "loadmill",
-  MYSIZE: "mysize",
+  WORK: "work",
+  CASCADEKIT: "cascadekit",
   ALONA: "alona-design",
   CSSBATTLE: "css-battle",
   MISC: "misc",
@@ -17,21 +17,21 @@ export const Pages = {
 };
 
 export const Projects = [
-  Pages.LOADMILL,
+  Pages.CASCADEKIT,
+  Pages.WORK,
   Pages.ATOM_GRID_TABLE,
   Pages.ALONA,
   Pages.CSSBATTLE,
-  Pages.MYSIZE,
   Pages.MISC,
 ];
 
 export const PagesData = {
-  [Pages.LOADMILL]: {
-    title: "Loadmill",
+  [Pages.WORK]: {
+    title: "Work",
     startPlace: Math.floor(Math.random() * 200)
   },
-  [Pages.MYSIZE]: {
-    title: "MySize",
+  [Pages.CASCADEKIT]: {
+    title: "CascadeKit",
     startPlace: Math.floor(Math.random() * 200)
   },
   [Pages.ALONA]: {
@@ -80,6 +80,7 @@ export interface PageContent {
     title: string;
     tldr: string;
     image: string;
+    noShadow?: boolean;
   };
   mainSection: {
     paragraphs: (string | JSX.Element)[];
@@ -90,8 +91,8 @@ export interface PageContent {
 };
 
 export const PagesContent = {
-  [Pages.LOADMILL]: LoadmillContent,
-  [Pages.MYSIZE]: MysizeContent,
+  [Pages.WORK]: WorkContent,
+  [Pages.CASCADEKIT]: CascadeKitContent,
   [Pages.ALONA]: AlonaContent,
   [Pages.CSSBATTLE]: CssBattleContent,
   [Pages.MISC]: MiscContent,

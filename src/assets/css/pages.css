@@ -47,6 +47,9 @@
     section img {
         box-shadow: -.8rem -.8rem 1.5rem #0005;
         border-radius: max(0.4rem, 4px);
+        &.no-shadow {
+            box-shadow: none;
+        }
     }
 
     section div:not(.two-imgs) img {
